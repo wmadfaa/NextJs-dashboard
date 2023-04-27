@@ -47,7 +47,8 @@ function _IconButton<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: 
         classes?.root,
         "inline-grid grid-flow-col place-items-center place-content-center",
         {
-          "!bg-primary dark:!bg-primary active:!bg-primary-dark text-dark": variant == "filled",
+          "!bg-primary dark:!bg-primary active:!bg-primary-dark active:dark:!bg-primary-dark text-dark":
+            variant == "filled",
           "!bg-grey-solid dark:!bg-dark text-dark dark:text-white": variant == "outlined",
           "!bg-transparent !shadow-none !border-none text-dark dark:text-white hover:text-primary active:text-primary-dark dark:hover:text-primary":
             variant == "transparent",

@@ -1,7 +1,6 @@
 import React, { ForwardedRef, forwardRef, useMemo } from "react";
 import classNames from "classnames/dedupe";
-import { TIConProps } from "@/components/base/icon";
-import Icon from "../icon";
+import Icon, { TIConProps } from "@/components/base/icon";
 
 type DEFAULT_ELEMENT_TYPE = "span";
 
@@ -22,7 +21,7 @@ interface IProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> {
   IconProps?: Partial<Omit<TIConProps, "icon" | "size">>;
   iconPosition?: "start" | "end";
 
-  color?: "dark" | "white" | "primary" | "yellow" | "green" | "red";
+  color?: "current" | "dark" | "white" | "primary" | "yellow" | "green" | "red";
   colorPosition?: "start" | "end";
 
   theme?: "dark-filled" | "dark-outlined" | "primary" | "yellow" | "green" | "red";
@@ -61,6 +60,7 @@ function _Tag<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IProps<
     () => (
       <span
         className={classNames(classes?.color, "block w-2 h-2 rounded-full", {
+          "bg-current": color == "current",
           "bg-dark": color == "dark",
           "bg-white": color == "white",
           "bg-primary": color == "primary",

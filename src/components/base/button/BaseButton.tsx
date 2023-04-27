@@ -26,7 +26,7 @@ function _BaseButton<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: 
       className={classNames(
         className,
         classes?.root,
-        "rounded-sm bg-grey-solid dark:bg-dark border border-onLight dark:border-onDark hover:shadow active:shadow-none shadow-onLight dark:shadow-onLight outline-none"
+        "rounded-sm bg-grey-solid dark:bg-dark border border-onLight dark:border-onDark hover:shadow active:shadow-none shadow-onLight dark:shadow-onDark outline-none"
       )}
       {...otherProps}
     >
