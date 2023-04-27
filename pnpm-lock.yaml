@@ -1,6 +1,12 @@
 lockfileVersion: "6.0"
 
 dependencies:
+  "@material-design-icons/svg":
+    specifier: ^0.14.6
+    version: 0.14.6
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
   next:
     specifier: 13.3.1
     version: 13.3.1(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
@@ -1526,6 +1532,11 @@ packages:
       "@jridgewell/resolve-uri": 3.1.0
       "@jridgewell/sourcemap-codec": 1.4.14
 
+  /@material-design-icons/svg@0.14.6:
+    resolution:
+      { integrity: sha512-1jhrK/OcwRzU9EKTQPqtCjHgdaksNy7nSOYTIIVEc4ub1WnHMemzUTWLyNMF0jK6VUOsd9KRLhrHq0pYGCPwNg== }
+    dev: false
+
   /@next/env@13.3.1:
     resolution:
       { integrity: sha512-EDtCoedIZC7JlUQ3uaQpSc4aVmyhbLHmQVALg7pFfQgOTjgSnn7mKtA0DiCMkYvvsx6aFb5octGMtWrOtGXW9A== }
@@ -2331,6 +2342,11 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /classnames@2.3.2:
+    resolution:
+      { integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw== }
+    dev: false
 
   /clean-stack@2.2.0:
     resolution:

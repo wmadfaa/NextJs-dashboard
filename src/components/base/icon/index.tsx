@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ForwardedRef, forwardRef } from "react";
+import React, { ComponentPropsWithoutRef, ForwardedRef, forwardRef } from "react";
 
 type DEFAULT_ELEMENT_TYPE = "svg";
 interface IProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> {
@@ -12,7 +12,7 @@ interface IProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> {
 }
 
 export type IIConProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> = IProps<T> & ComponentPropsWithoutRef<T>;
-export function Icon<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IIConProps<T>, ref: ForwardedRef<T>) {
+export function _Icon<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IIConProps<T>, ref: ForwardedRef<T>) {
   let { icon: ICON_ELEMENT, size, style, ...otherProps } = props;
   const size2value = typeof size == "number" ? size : ICON_SIZES[size || "base"];
 
@@ -37,4 +37,7 @@ const ICON_SIZES = {
   xl: 28,
 };
 
-export default forwardRef(Icon);
+export const Icon = forwardRef(_Icon) as <T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(
+  props: IIConProps<T> & { ref?: ForwardedRef<T> }
+) => React.ReactElement;
+export default Icon;

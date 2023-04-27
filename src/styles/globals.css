@@ -4,7 +4,7 @@
 
 @layer base {
   * {
-    @apply scroll-smooth;
+    @apply scroll-smooth box-border transition-all motion-reduce:transition-none;
   }
 
   html {
@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply overflow-auto;
+    @apply overflow-auto bg-grey-solid dark:bg-dark;
   }
 
   html,

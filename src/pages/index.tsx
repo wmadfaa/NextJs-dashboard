@@ -1,5 +1,5 @@
 function Home() {
-  return <div></div>;
+  return <div className="h-full grid place-items-center"></div>;
 }
 
 export default Home;
