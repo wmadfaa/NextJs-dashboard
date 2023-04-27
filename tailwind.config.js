@@ -61,6 +61,7 @@ module.exports = {
         onLight: "#000000",
         onDark: "rgba(255, 255, 255, 0.25)",
       },
+      borderRadius: { xs: "0.0625rem" },
     },
     fontFamily: {
       sans: ["var(--roboto-flex-font)", ...defaultTheme.fontFamily.sans],

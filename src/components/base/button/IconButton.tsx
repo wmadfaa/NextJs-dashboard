@@ -1,7 +1,7 @@
 import React, { ForwardedRef, forwardRef } from "react";
 import BaseButton from "@/components/base/button/BaseButton";
 import classNames from "classnames/dedupe";
-import { IIConProps } from "@/components/base/icon";
+import { TIConProps } from "@/components/base/icon";
 import Icon from "@/components/base/icon";
 
 type DEFAULT_ELEMENT_TYPE = "button";
@@ -15,14 +15,14 @@ interface IProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> {
   classes?: Partial<IIconButtonClassNames>;
   className?: string;
 
-  icon: IIConProps["icon"];
-  IconProps?: Partial<Omit<IIConProps, "icon" | "size">>;
+  icon: TIConProps["icon"];
+  IconProps?: Partial<Omit<TIConProps, "icon" | "size">>;
 
   variant?: "filled" | "outlined" | "transparent";
   size?: "base" | "sm";
 }
 
-export type IIconButtonProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> = IProps<T> &
+export type TIconButtonProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> = IProps<T> &
   React.ComponentPropsWithoutRef<T>;
 function _IconButton<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IProps<T>, ref: ForwardedRef<T>) {
   const {
@@ -68,13 +68,13 @@ function _IconButton<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: 
   );
 }
 
-const mapSize2IconSize: Record<Required<IProps>["size"], IIConProps["size"]> = {
+const mapSize2IconSize: Record<Required<IProps>["size"], TIConProps["size"]> = {
   base: "sm",
   sm: "xs",
 };
 
 export const IconButton = forwardRef(_IconButton) as <T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(
-  props: IIconButtonProps<T> & { ref?: ForwardedRef<T> }
+  props: TIconButtonProps<T> & { ref?: ForwardedRef<T> }
 ) => React.ReactElement;
 
 export default IconButton;

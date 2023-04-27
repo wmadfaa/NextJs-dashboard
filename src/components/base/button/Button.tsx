@@ -1,7 +1,7 @@
 import React, { ForwardedRef, forwardRef, useMemo } from "react";
 import BaseButton from "@/components/base/button/BaseButton";
 import classNames from "classnames/dedupe";
-import { IIConProps } from "@/components/base/icon";
+import { TIConProps } from "@/components/base/icon";
 import Icon from "@/components/base/icon";
 
 type DEFAULT_ELEMENT_TYPE = "button";
@@ -17,15 +17,15 @@ interface IProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> {
   className?: string;
 
   label: string;
-  icon?: IIConProps["icon"];
-  IconProps?: Partial<Omit<IIConProps, "icon" | "size">>;
+  icon?: TIConProps["icon"];
+  IconProps?: Partial<Omit<TIConProps, "icon" | "size">>;
   iconPosition?: "start" | "end";
 
   variant?: "filled" | "outlined" | "transparent";
   size?: "base" | "sm";
 }
 
-export type IButtonProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> = IProps<T> &
+export type TButtonProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> = IProps<T> &
   React.ComponentPropsWithoutRef<T>;
 function _Button<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IProps<T>, ref: ForwardedRef<T>) {
   const {
@@ -62,7 +62,7 @@ function _Button<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IPro
       className={classNames(
         className,
         classes?.root,
-        "inline-grid grid-flow-col place-items-center place-content-center capitalize",
+        "inline-grid grid-flow-col place-items-center place-content-center",
         {
           "!bg-primary dark:!bg-primary active:!bg-primary-dark text-dark": variant == "filled",
           "!bg-grey-solid dark:!bg-dark text-dark dark:text-white": variant == "outlined",
@@ -76,19 +76,19 @@ function _Button<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IPro
       )}
     >
       {iconPosition == "start" && icon && IconComponent}
-      <span className={classNames(classes?.label)}>{label}</span>
+      <span className={classNames(classes?.label, "text-center capitalize")}>{label}</span>
       {iconPosition == "end" && icon && IconComponent}
     </BaseButton>
   );
 }
 
-const mapSize2IconSize: Record<Required<IProps>["size"], IIConProps["size"]> = {
+const mapSize2IconSize: Record<Required<IProps>["size"], TIConProps["size"]> = {
   base: "sm",
   sm: "xs",
 };
 
 export const Button = forwardRef(_Button) as <T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(
-  props: IButtonProps<T> & { ref?: ForwardedRef<T> }
+  props: TButtonProps<T> & { ref?: ForwardedRef<T> }
 ) => React.ReactElement;
 
 export default Button;

@@ -13,7 +13,7 @@ interface IProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> {
   children?: React.ReactNode;
 }
 
-export type IBaseButtonProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> = IProps<T> &
+export type TBaseButtonProps<T extends React.ElementType = DEFAULT_ELEMENT_TYPE> = IProps<T> &
   React.ComponentPropsWithoutRef<T>;
 
 function _BaseButton<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IProps<T>, ref: ForwardedRef<T>) {
@@ -36,7 +36,7 @@ function _BaseButton<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: 
 }
 
 const BaseButton = forwardRef(_BaseButton) as <T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(
-  props: IBaseButtonProps<T> & { ref?: ForwardedRef<T> }
+  props: TBaseButtonProps<T> & { ref?: ForwardedRef<T> }
 ) => React.ReactElement;
 
 export { BaseButton };
