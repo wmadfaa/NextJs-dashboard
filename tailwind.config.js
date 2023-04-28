@@ -88,9 +88,12 @@ module.exports = {
     },
   },
   plugins: [
+    require("@tailwindcss/forms"),
     plugin(function ({ addVariant }) {
       addVariant("hocus", ["&:hover", "&:focus"]);
+      addVariant("group-hocus", [".group:hover &", ".group:focus &"]);
       addVariant("hotive", ["&:hover", "&:active"]);
+      addVariant("group-hotive", [".group:hover &", ".group:active &"]);
     }),
   ],
 };

@@ -35,9 +35,8 @@ function _BaseButton<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: 
   );
 }
 
-const BaseButton = forwardRef(_BaseButton) as <T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(
+export const BaseButton = forwardRef(_BaseButton) as <T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(
   props: TBaseButtonProps<T> & { ref?: ForwardedRef<T> }
 ) => React.ReactElement;
 
-export { BaseButton };
 export default BaseButton;
