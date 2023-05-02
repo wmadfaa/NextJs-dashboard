@@ -69,7 +69,7 @@ function _Chip<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IProps
       <div
         className={classNames(
           classes?.content,
-          "py-1 px-4 gap-x-1.5 flex-grow inline-grid grid-flow-col place-items-center place-content-center"
+          "py-2 px-4 gap-x-1.5 flex-grow inline-grid grid-flow-col place-items-center place-content-center"
         )}
       >
         {color && (
