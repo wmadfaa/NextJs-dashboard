@@ -6,6 +6,7 @@ type DEFAULT_ELEMENT_TYPE = "span";
 
 export interface ITagClassNames {
   root: string;
+  label: string;
   icon: string;
   color: string;
 }
@@ -94,7 +95,7 @@ function _Tag<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IProps<
     >
       {color && colorPosition == "start" && ColorComponent}
       {iconPosition == "start" && icon && IconComponent}
-      <span className="text-p3-bold text-center">{label}</span>
+      <span className={classNames(classes?.label, "text-p3-bold text-center")}>{label}</span>
       {color && colorPosition == "end" && ColorComponent}
       {iconPosition == "end" && icon && IconComponent}
     </ElementType>

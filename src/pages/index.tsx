@@ -1,29 +1,22 @@
-import { Input, Select } from "@/components/base";
-
-const options = [
-  {
-    label: "group 1",
-    options: [
-      { value: "chocolate", label: "Chocolate" },
-      { value: "strawberry", label: "Strawberry" },
-      { value: "vanilla", label: "Vanilla" },
-    ],
-  },
-  {
-    label: "group 2",
-    options: [
-      { value: "chocolate 2", label: "Chocolate" },
-      { value: "strawberry 2", label: "Strawberry" },
-      { value: "vanilla 2", label: "Vanilla" },
-    ],
-  },
-];
+import { Badge } from "@/components/base";
 
 function Home() {
   return (
     <div className="h-full grid place-items-center">
-      <Select options={options} isClearable isMulti />
-      <Input name={"email"} placeholder="Hi" />
+      <div className="grid grid-cols-3 gap-3">
+        <Badge theme="dark">2</Badge>
+        <Badge theme="primary">2</Badge>
+        <Badge theme="yellow">2</Badge>
+        <Badge theme="green">2</Badge>
+        <Badge theme="red">2</Badge>
+      </div>
+      <div className="dark grid grid-cols-3 gap-3 bg-dark p-10">
+        <Badge theme="dark">2</Badge>
+        <Badge theme="primary">2</Badge>
+        <Badge theme="yellow">2</Badge>
+        <Badge theme="green">2</Badge>
+        <Badge theme="red">2</Badge>
+      </div>
     </div>
   );
 }

@@ -10,6 +10,7 @@ type DEFAULT_ELEMENT_TYPE = "span";
 export interface IChipClassNames {
   root: string;
   content: string;
+  label: string;
   icon: string;
   color: string;
 }
@@ -93,7 +94,7 @@ function _Chip<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: IProps
             className={classNames(IconProps?.className, classes?.icon, "fill-current")}
           />
         )}
-        <span className="text-p3-bold text-center">{label}</span>
+        <span className={classNames(classes?.label, "text-p3-bold text-center")}>{label}</span>
       </div>
       {onClose && (
         <IconButton
