@@ -1,11 +1,11 @@
-import { ProgressBar } from "@/components/base";
+import { Switch } from "@/components/base";
+import { useState } from "react";
 
 function Home() {
+  const [checked, setState] = useState<boolean>();
   return (
     <div className="h-full grid place-items-center">
-      <div className="h-[600px]">
-        <ProgressBar progress={Math.random()} mapProgress2Theme direction="vert" />
-      </div>
+      <Switch checked={checked} onChange={setState} />
     </div>
   );
 }
