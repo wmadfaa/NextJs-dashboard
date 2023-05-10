@@ -1,9 +1,9 @@
-import { Checkbox } from "@/components/base";
+import { Radio } from "@/components/base";
 
 function Home() {
   return (
     <div className="h-full grid place-items-center">
-      <Checkbox name="test" />
+      <Radio name="test" label="label" helpText="help text" disabled />
     </div>
   );
 }

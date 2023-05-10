@@ -8,3 +8,4 @@ export * from "./badge";
 export * from "./progressBar";
 export * from "./switch";
 export * from "./checkbox";
+export * from "./radio";
