@@ -1,11 +1,9 @@
-import { Switch } from "@/components/base";
-import { useState } from "react";
+import { Checkbox } from "@/components/base";
 
 function Home() {
-  const [checked, setState] = useState<boolean>();
   return (
     <div className="h-full grid place-items-center">
-      <Switch checked={checked} onChange={setState} />
+      <Checkbox name="test" />
     </div>
   );
 }
