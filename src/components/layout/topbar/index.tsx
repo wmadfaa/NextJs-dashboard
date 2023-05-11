@@ -1,7 +1,8 @@
-import React, { ComponentPropsWithoutRef, ForwardedRef, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 import { Container } from "@/components/base";
 import classNames from "classnames/dedupe";
+import LayoutPlaceholder from "../components/layoutPlaceholder";
 
 export interface ITopbarClassNames {
   root: string;
@@ -41,22 +42,6 @@ function Topbar(props: TTopbarProps) {
   );
 }
 
-function Placeholder<T extends React.ElementType = "div">(
-  props: ComponentPropsWithoutRef<T> & { elementType?: T | React.JSXElementConstructor<any> },
-  ref: ForwardedRef<T>
-) {
-  const { elementType: ElementType = "div", className, ...otherProps } = props;
-
-  return (
-    // @ts-expect-error
-    <ElementType
-      ref={ref}
-      className={classNames(className, "block h-[72px] w-full pointer-events-none")}
-      {...otherProps}
-    />
-  );
-}
-
-Topbar.Placeholder = Placeholder;
+Topbar.Placeholder = LayoutPlaceholder("100%", 72);
 
 export default Topbar;
