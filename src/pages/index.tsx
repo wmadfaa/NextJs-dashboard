@@ -1,4 +1,5 @@
 import { Footer } from "@/components/layout";
+import ThemeSwitch from "@/components/ThemeSwitch";
 
 function Home() {
   return (
@@ -8,6 +9,11 @@ function Home() {
         { label: "License", href: "#" },
         { label: "API", href: "#" },
       ]}
+      actions={
+        <>
+          <ThemeSwitch theme="light" onChange={console.log} />
+        </>
+      }
     />
   );
 }
