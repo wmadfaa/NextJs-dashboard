@@ -24,7 +24,7 @@ function _Container<T extends React.ElementType = DEFAULT_ELEMENT_TYPE>(props: I
     // @ts-expect-error
     <ElementType
       ref={ref}
-      className={classNames(className, classes?.root, "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-16")}
+      className={classNames(className, classes?.root, "mx-auto px-4 sm:px-6 lg:px-8 xl:px-16")}
       {...otherProps}
     >
       {children}
