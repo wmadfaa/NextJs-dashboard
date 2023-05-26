@@ -17,10 +17,10 @@ function ThemeSwitch(props: TThemeSwitchProps) {
   const { theme, onChange } = props;
 
   return (
-    <div className="flex border rounded-xs border-onLight dark:border-onDark overflow-hidden">
+    <div className="m-2.5 flex border rounded-xs border-onLight dark:border-onDark overflow-hidden">
       <button
         className={classNames(
-          "p-4 grid place-items-center outline-none",
+          "p-1.5 grid place-items-center outline-none",
           theme == "light"
             ? "bg-primary hocus:bg-primary-dark"
             : "text-onLight hover:text-primary dark:text-onDark hover:dark:text-primary-dark"
@@ -31,7 +31,7 @@ function ThemeSwitch(props: TThemeSwitchProps) {
       </button>
       <button
         className={classNames(
-          "p-4 grid place-items-center outline-none",
+          "p-1.5 grid place-items-center outline-none",
           theme == "dark"
             ? "bg-primary hocus:bg-primary-dark"
             : "text-onLight hover:text-primary dark:text-onDark hover:dark:text-primary-dark"
