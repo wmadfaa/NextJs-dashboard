@@ -57,6 +57,7 @@ export function DashboardLayout({ children }: IProps) {
                   { elementType: Link, icon: store_icon, label: "products", href: "/products" },
                   { elementType: Link, icon: group_icon, label: "contacts", href: "/contacts" },
                 ],
+                expandable: true,
               },
             },
           ]}
